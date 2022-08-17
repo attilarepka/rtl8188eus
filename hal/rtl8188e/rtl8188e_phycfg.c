@@ -1136,12 +1136,12 @@ PHY_GetTxPowerLevel8188E(
 #if 0
 	HAL_DATA_TYPE	*pHalData = GET_HAL_DATA(Adapter);
 	PMGNT_INFO		pMgntInfo = &(Adapter->MgntInfo);
-	s4Byte			TxPwrDbm = 13;
+	//s4Byte			TxPwrDbm = 13;
 
 	if (pMgntInfo->ClientConfigPwrInDbm != UNSPECIFIED_PWR_DBM)
 		*powerlevel = pMgntInfo->ClientConfigPwrInDbm;
 	else
-		*powerlevel = TxPwrDbm;
+		*powerlevel = pHalData->CurrentTxPwrIdx;
 #endif
 }
 
